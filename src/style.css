@@ -1,0 +1,221 @@
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 原子化css，不使用现成库的原因是：没必要添加过大的css文件，仅需部分新的常用样式介入即可 */
+/* 包含各类标准化命名的类，它们负责提供尽可能职责单一的css属性 */
+
+/* width & height related */
+.width-full {
+  width: 100%;
+}
+
+.height-full {
+  height: 100%;
+}
+
+/* position related */
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.pos-fix {
+  position: fixed;
+}
+
+.t-0 {
+  top: 0;
+}
+
+.r-0 {
+  right: 0;
+}
+
+.b-0 {
+  bottom: 0;
+}
+
+.l-0 {
+  left: 0;
+}
+
+.t-10 {
+  top: 10px;
+}
+
+.r-10 {
+  right: 10px;
+}
+
+.b-10 {
+  bottom: 10px;
+}
+
+.l-10 {
+  left: 10px;
+}
+
+/* flex related */
+.d-flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-item-center {
+  align-items: center;
+}
+
+.flex-content-around {
+  justify-content: space-around;
+}
+
+.flex-content-between {
+  justify-content: space-between;
+}
+
+.flex-content-center {
+  justify-content: center;
+}
+
+.flex-shrink-full {
+  flex-shrink: 1;
+}
+
+.flex-shrink-none {
+  flex-shrink: 0;
+}
+
+.flex-grow-full {
+  flex-grow: 1;
+}
+
+.flex-grow-none {
+  flex-grow: 0;
+}
+
+.flex-basis-1-2 {
+  flex-basis: 50%;
+}
+
+.flex-basis-1-3 {
+  flex-basis: 33%;
+}
+
+.flex-basis-1-4 {
+  flex-basis: 25%;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* margin & padding related */
+.m-10 {
+  margin: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.m-5 {
+  margin: 5px;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.p-5 {
+  padding: 5px;
+}
+
+.pt-5 {
+  padding-top: 5px;
+}
+
+.pr-5 {
+  padding-right: 5px;
+}
+
+.pb-5 {
+  padding-bottom: 5px;
+}
+
+.pl-5 {
+  padding-left: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
