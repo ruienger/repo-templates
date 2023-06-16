@@ -1,7 +1,6 @@
 /// <reference types="vite/client" />
 interface ImportMetaEnv {
-  HOST: string;
-  PORT: string;
-  BASE_PROXY: string;
-  VITE_BASE_URL: string;
+  VITE_API_NAMESPACE: string;
+  VITE_API_PROXY: string;
+  VITE_API_URL: string;
 }

@@ -1,7 +1,5 @@
 import type { AxiosError } from 'axios';
 import type { HTTPMiddleware } from 'src/api/types/http';
-import router from 'src/router';
-import { LOGIN } from 'src/router/name';
 import useStore from 'src/store/auth';
 
 /**
@@ -20,8 +18,7 @@ const authHandler: HTTPMiddleware = function (config, next) {
   }
   return next().catch((e: AxiosError) => {
     if (e.code === '401') {
-      store.removeAccessToken();
-      router.push(LOGIN);
+      store.logout();
     }
 
     throw e;

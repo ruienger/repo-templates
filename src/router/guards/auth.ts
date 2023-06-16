@@ -9,4 +9,6 @@ export function useAuthGuard(router: Router) {
       return false;
     }
   });
+
+  return router;
 }

@@ -1,35 +1,18 @@
-import type { AxiosRequestConfig, AxiosResponse } from 'axios';
-import type { HTTPMiddleware, HTTPInterface } from '../types/http';
-import axios, { Axios } from 'axios';
+import type { HTTPInterface } from '../types/http';
+import HTTP from './http';
+import authHandler from './middlewares/authHandler';
+import errorHandler from './middlewares/errorHandler';
+import requestThrottle from './middlewares/requestThrottle';
+import responseHandler from './middlewares/responseHandler.ts';
 
-export default class HTTP extends Axios implements HTTPInterface {
-  readonly middlewares: HTTPMiddleware[] = [];
+const http: HTTPInterface = new HTTP({
+  baseURL: `${import.meta.env.VITE_API_URL}${import.meta.env.VITE_API_NAMESPACE}`,
+  timeout: 5000,
+});
 
-  constructor(config: AxiosRequestConfig) {
-    super(axios.mergeConfig(axios.defaults, config));
-  }
+http.use(requestThrottle);
+http.use(errorHandler);
+http.use(authHandler);
+http.use(responseHandler);
 
-  use(middleware: HTTPMiddleware): number {
-    return this.middlewares.push(middleware) - 1;
-  }
-
-  drop(index: number): HTTPMiddleware {
-    return this.middlewares.splice(index, 1)[0];
-  }
-
-  request<R = AxiosResponse>(config: AxiosRequestConfig): Promise<R> {
-    const _ = (count: number) => {
-      if (count === this.middlewares.length) return super.request(config);
-      const fn = this.middlewares[count];
-      return new Promise((resolve, reject) => {
-        try {
-          resolve(fn.call(this, config, () => _(count + 1)));
-        } catch (e) {
-          reject(e);
-        }
-      });
-    };
-
-    return _(0) as Promise<R>;
-  }
-}
+export default http;

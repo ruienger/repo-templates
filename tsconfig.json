@@ -25,7 +25,7 @@
     },
 
     /* ext types */
-    "types": ["vitest/globals", "vite/client", "element-plus/global", "unplugin-icons/types/vue"]
+    "types": ["vite/client", "element-plus/global", "unplugin-icons/types/vue"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "types"]
 }

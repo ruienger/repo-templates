@@ -1,17 +1,29 @@
-# repo-templates
+# web_vue3_ts_ele_vite
 
-存放各种类型的项目的模板仓库
+基于 vue3(vue3 + vue-router + pinia) + typescript + element-plus 开发的项目
+使用 vite 构建
+使用 eslint + prettier 格式化
+使用 husky + lint-stage 标准化流程
+使用 githubCI/CD 自动化集成与部署
 
-## 模板仓库命名规则
+## 创建项目
 
-${应用类型}_${使用的技术栈}
+使用`cofa`:
+`cofa create ${your project name}`
+`cd ${your project name}`
+`npm install`
 
-例如
+不使用：
+`git clone ${this repo url}`
+`cd ${this repo name}`
+`npm install`
 
-- web_vue2_webpack
-- web_vue3_ts_vite
-- web_vue3_ts_ele_vite
-- web_vue3_ts_ele_vite_docker
-- lib_rust
-- lib_nodejs_rollup
-- cmd_nodejs_ts_rollup
+## 开发流程
+
+开发代码
+`npm run dev`
+提交代码并合入
+
+## 部署流程
+
+根据具体部署需求采用部署方案

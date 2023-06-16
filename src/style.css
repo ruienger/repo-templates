@@ -11,9 +11,6 @@ body,
   box-sizing: border-box;
 }
 
-/* 原子化css，不使用现成库的原因是：没必要添加过大的css文件，仅需部分新的常用样式介入即可 */
-/* 包含各类标准化命名的类，它们负责提供尽可能职责单一的css属性 */
-
 /* width & height related */
 .width-full {
   width: 100%;
@@ -73,12 +70,12 @@ body,
   display: flex;
 }
 
-.flex-row {
+.d-flex-row {
   display: flex;
   flex-direction: row;
 }
 
-.flex-col {
+.d-flex-col {
   display: flex;
   flex-direction: column;
 }

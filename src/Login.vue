@@ -2,9 +2,9 @@
 <!-- eslint-disable @typescript-eslint/no-explicit-any -->
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
-  import useAuthStore from 'src/store/auth';
-  import PwdIcon from '~icons/mdi/password';
   import UserIcon from '~icons/mdi/user';
+  import PwdIcon from '~icons/mdi/password';
+  import useStore from 'src/store/auth';
 
   const formRef = ref<FormInstance>();
   const loading = ref(false);
@@ -15,7 +15,7 @@
   });
   const formRules = reactive({
     username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-    password: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+    password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
   });
 
   const login = (e?: KeyboardEvent | MouseEvent) => {
@@ -25,7 +25,7 @@
     formRef.value.validate((v) => {
       if (v) {
         loading.value = true;
-        useAuthStore()
+        useStore()
           .login(formData.username, formData.password)
           .finally(() => {
             loading.value = false;
@@ -54,29 +54,28 @@
       <ElFormItem prop="username">
         <ElInput
           v-model="formData.username"
-          placeholder="用户名"
           :prefix-icon="PwdIcon"
+          placeholder="用户名"
         />
       </ElFormItem>
       <ElFormItem prop="password">
         <ElInput
           v-model="formData.password"
+          :prefix-icon="UserIcon"
           type="password"
           placeholder="密码"
-          :prefix-icon="UserIcon"
           show-password
-          required
         />
       </ElFormItem>
       <ElFormItem>
         <ElButton
-          type="primary"
-          plain
           :loading="loading"
           style="width: 100%"
+          type="primary"
+          plain
           @click="login"
         >
-          登录
+          100%成功的登录
         </ElButton>
       </ElFormItem>
     </ElForm>
@@ -92,11 +91,7 @@
 
   html,
   body,
-  #app {
-    width: 100%;
-    height: 100%;
-  }
-
+  #app,
   .fullscreen {
     width: 100%;
     height: 100%;
@@ -106,7 +101,9 @@
     text-align: center;
     position: absolute;
     width: 20%;
+    min-width: 500px;
     height: 20%;
+    min-height: 500px;
     top: 40%;
     left: 40%;
   }
