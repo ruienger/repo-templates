@@ -1,7 +1,15 @@
 {
   /* Visit https://aka.ms/tsconfig to read more about this file */
-  "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
+    /** https://github.com/tsconfig/bases/blob/main/bases/node14.json */
+    "lib": ["es2020"],
+    "module": "node16",
+    "target": "es2020",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node16",
     /** 不允许编译 js 文件 */
     "allowJs": false,
     /** 配合 allowImportingTsExtensions 一起允许导入 *.ts 文件 */
