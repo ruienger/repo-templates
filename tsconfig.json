@@ -1,0 +1,21 @@
+{
+  /* Visit https://aka.ms/tsconfig to read more about this file */
+  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    /** 不允许编译 js 文件 */
+    "allowJs": false,
+    /** 配合 allowImportingTsExtensions 一起允许导入 *.ts 文件 */
+    "noEmit": true,
+    /** moduleResolution 导致 ts 仅能导入 *.js 文件，这样会在测试时报找不到文件的错 */
+    "allowImportingTsExtensions": true,
+    /** 自动生成声明文件 */
+    "declaration": true,
+    /** 声明文件新建的位置 */
+    "declarationDir": "types/",
+    "baseUrl": "./",
+    "paths": {
+      "src": ["src"]
+    }
+  },
+  "include": ["src/**/*.ts"]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "nodelib_rollup_ts",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./index.js"
+      },
+      "require": {
+        "default": "./index.cjs"
+      }
+    }
+  },
+  "types": "types/index.d.ts",
+  "main": "index.cjs",
+  "scripts": {
+    "dev": "rollup --config --watch",
+    "build": "rollup --config",
+    "test": "jest",
+    "prepare": "husky install"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@tsconfig/node14": "^14.1.0",
+    "@types/jest": "^29.5.2",
+    "@types/node": "^20.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.3",
+    "jest": "^29.6.0",
+    "lint-staged": "^13.2.3",
+    "prettier": "2.8.8",
+    "rollup": "^3.25.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
