@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: ["master", "feature-*", "bugfix-*"]
+    branches: ["nodelib_rollup_ts"]
   pull_request:
-    branches: ["master"]
+    branches: ["nodelib_rollup_ts"]
 
 jobs:
   build:
