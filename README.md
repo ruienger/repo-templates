@@ -1,6 +1,6 @@
 # nodelib_rollup_ts
 
-基于 typescript 开发的项目
+基于 typescript 开发的 nodejs 库模板
 
 使用 rollup 构建
 

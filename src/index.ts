@@ -1,6 +1,7 @@
-import flex from "./log.ts";
+import { num } from "types/index";
+import flex from "./log";
 
-export default function add(x: number, y: number) {
+export default function add(x: num, y: num) {
   flex();
   return x + y;
 }
