@@ -7,7 +7,6 @@
   "types": "./types/index.d.ts",
   "scripts": {
     "dev": "rollup --config --watch",
-    "build:dts": "tsc ./src/index.ts -d --emitDeclarationOnly ./types/index.d.ts",
     "build": "rollup --config",
     "test": "jest",
     "prepare": "husky install"

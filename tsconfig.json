@@ -4,8 +4,6 @@
   "compilerOptions": {
     /** commonjs is incompatible with rollup 8 */
     "module": "ESNext",
-    /** generate declarations */
-    "declaration": true,
     "baseUrl": "./",
     "paths": {
       "src": ["src"],
